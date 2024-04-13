@@ -2,6 +2,7 @@ package main
 
 import (
 	"encoding/json"
+	"fmt"
 	"io"
 	"io/ioutil"
 	"log"
@@ -80,6 +81,13 @@ func main() {
 				}
 			}
 		}
+	})
+
+	http.HandleFunc("GET /ping", func(w http.ResponseWriter, r *http.Request) {
+		// HTTPステータスコード200(OK)を返す
+		w.WriteHeader(http.StatusOK)
+		// "OK"というメッセージをレスポンスのボディに書き込む
+		fmt.Fprintln(w, "OK")
 	})
 
 	log.Println("[INFO] Server listening")
