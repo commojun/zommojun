@@ -33,15 +33,15 @@ spec:
     spec:
       containers:
       - name: bot
-        image: commojun/zommojun:latest
+        image: commojun/zommojun
         ports:
         - containerPort: 30011
         readinessProbe:
           httpGet:
-            path: /
+            path: /ping
             port: 30011
             scheme: HTTP
-          initialDelaySeconds: 600
+          initialDelaySeconds: 30
           periodSeconds: 30
         envFrom:
         - secretRef:
