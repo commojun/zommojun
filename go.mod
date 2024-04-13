@@ -1,6 +1,6 @@
 module github.com/commojun/zommojun
 
-go 1.21.3
+go 1.22.1
 
 require github.com/slack-go/slack v0.12.5
 
